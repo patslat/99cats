@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Edit Cat</title>
+</head>
+
+<body>
+	<h1>Edit a new cat</h1>
+	<form action="http://localhost:3000/cats/<%=@cat.id%>" method="put">
+		<label for="cat_name">Name: </label>
+		<input type="text" value="<%=@cat.name%>" name="cat[name]" id="cat_name">
+		<label for="cat_age">Age: </label>
+		<input type="integer" value="<%=@cat.age%>" name="cat[age]" id="cat_age">
+		<label for="cat_birth_date">Birth Date: </label>
+		<input type="date" value="<%=@cat.birth_date%>" name="cat[birth_date]" id="cat_birth_date">
+		<label for="cat_sex">Sex: </label>
+		<input type="text" value="<%=@cat.sex%>" name="cat[sex]" id="cat_sex">
+		<label for="cat_color">Color: </label>
+		<input type="text" value="<%=@cat.color%>" name="cat[color]" id="cat_color">
+
+		<input type="submit" value="Edit cat">
+	</form>
+</body>
+</html>

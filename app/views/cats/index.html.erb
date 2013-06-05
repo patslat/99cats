@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Cats</title>
+</head>
+
+<body>
+	<h1>All Cats</h1>
+	<%=flash[:create_failed] if flash[:create_failed]%>
+	<ul>
+		<% @cats.each do |cat| %>
+		  <li>
+				<%= cat.name %>
+			</li>
+		<% end %>
+	</ul>
+</body>
+</html>

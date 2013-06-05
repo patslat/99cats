@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Add Cat</title>
+</head>
+
+<body>
+	<h1>Add a new cat</h1>
+	<form action="http://localhost:3000/cats" method="post">
+		<label for="cat_name">Name: </label>
+		<input type="text" name="cat[name]" id="cat_name">
+		<label for="cat_age">Age: </label>
+		<input type="integer" name="cat[age]" id="cat_age">
+		<label for="cat_birth_date">Birth Date: </label>
+		<input type="date" name="cat[birth_date]" id="cat_birth_date">
+		<label for="cat_sex">Sex: </label>
+		<input type="text" name="cat[sex]" id="cat_sex">
+		<label for="cat_color">Color: </label>
+		<input type="text" name="cat[color]" id="cat_color">
+
+		<input type="submit" value="Create cat">
+	</form>
+</body>
+</html>
