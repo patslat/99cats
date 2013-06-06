@@ -20,6 +20,7 @@ class CatRentalRequestsController < ApplicationController
   end
 
   def approve
+    # TODO redirect_to cats_url unless authenticate_user
     CatRentalRequest.find(params[:request_id]).approve
     flash[:notice] = "Request Approved"
     redirect_to cat_url

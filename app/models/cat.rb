@@ -6,5 +6,7 @@ class Cat < ActiveRecord::Base
   }
   has_many :cat_rental_requests, dependent: :destroy
 
+  belongs_to :user
+
 
 end

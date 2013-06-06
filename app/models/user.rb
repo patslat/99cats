@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates :password, :username, :presence => true
   validates :password, :username, :uniqueness => true
 
+  has_many :cats
+
   def verify_password?(password)
     self.password == password
   end
