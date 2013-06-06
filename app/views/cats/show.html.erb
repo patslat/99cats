@@ -7,6 +7,8 @@
 
 <body>
 	<h1><%=@cat.name%></h1>
+
+	<%=flash[:notice] if flash[:notice]%>
 	<ul>
 	  <li>
 			<%="Age: #{@cat.age}"%>
@@ -21,5 +23,27 @@
 			<%="Color: #{@cat.color}"%>
 		</li>
 	</ul>
+
+	<h2>Rental Requests</h2>
+	<ol>
+		<% @cat_rental_requests.each do |request| %>
+			<li>
+			"Begin Date:	<%= request.begin_date %>
+				End Date: <%= request.end_date %>
+				Status: <%= request.status %>"
+				<%next if request.status == "approved" || request.status == "denied" %>
+				  <form action="http://localhost:3000/cat_rental_requests/<%= @cat.id%>/approve" method="post">
+			  	<input name="_method" type="hidden" value="put">
+					<input name="request_id" type="hidden" value="<%=request.id%>">
+			  <input type="submit" value="Approve request">
+					</form>
+		 		 	<form action="http://localhost:3000/cat_rental_requests/<%= @cat.id%>/deny" method="post">
+	  	<input name="_method" type="hidden" value="put">
+			<input name="request_id" type="hidden" value="<%=request.id%>">
+	  <input type="submit" value="Deny request">
+	</form>
+			</li>
+			<%end%>
+	</ol>
 </body>
 </html>

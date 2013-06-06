@@ -7,11 +7,20 @@
 
 <body>
 	<h1>All Cats</h1>
-	<%=flash[:create_failed] if flash[:create_failed]%>
+	<%=flash[:notice] if flash[:notice]%>
 	<ul>
 		<% @cats.each do |cat| %>
 		  <li>
 				<%= cat.name %>
+				<ul>
+				<% @cat_rental_requests.select { |request| request.cat_id == cat.id }.each do |request|%>
+				<li>
+				"Begin Date:	<%= request.begin_date %>
+					End Date: <%= request.end_date %>
+					Status: <%= request.status %>"
+				</li>
+				<%end%>
+			</ul>
 			</li>
 		<% end %>
 	</ul>

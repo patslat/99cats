@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Login</title>
+</head>
+
+<body>
+	<h1>Login</h1>
+	<form action="http://localhost:3000/session" method="post">
+		<label for="username">Name: </label>
+		<input type="text" name="user[username]" id="username">
+		<label for="password">Password: </label>
+		<input type="password" name="user[password]" id="password">
+
+		<input type="submit" value="login">
+	</form>
+</body>
+</html>

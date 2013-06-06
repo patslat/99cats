@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Rent A Cat</title>
+</head>
+
+<body>
+	<h1>Rent A Cat</h1>
+		<form action="http://localhost:3000/cat_rental_requests" method="post">
+		<label for="cat_rental_request_name">Name: </label>
+		<input type="text" name="rental[name]" id="cat_rental_request_name">
+		<label for="cat_rental_request_begin_date">Begin Date: </label>
+		<input type="date" name="rental[begin_date]" id="cat_rental_request_begin_date">
+		<label for="cat_rental_request_end_date">End Date: </label>
+		<input type="date" name="rental[end_date]" id="cat_rental_request_end_date">
+
+		<input type="submit" value="Rent cat">
+	</form>
+</body>
+</html>
